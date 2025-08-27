@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dsl05kkjesyl3"
-path="res://.godot/imported/idk.jpg-a0ece11462dc706559f48a2feff0b9d6.ctex"
+uid="uid://diibvaur1gtwf"
+path="res://.godot/imported/background.svg-5a6db7a2514c13f6cc9c110976d3ff91.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GO--GO--GO--/images/idk.jpg"
-dest_files=["res://.godot/imported/idk.jpg-a0ece11462dc706559f48a2feff0b9d6.ctex"]
+source_file="res://GO--GO--GO--/images/background.svg"
+dest_files=["res://.godot/imported/background.svg-5a6db7a2514c13f6cc9c110976d3ff91.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bujkf52ip60us"
-path="res://.godot/imported/spritesheet_jumper.png-f66191e1b898edebecb4942114106df2.ctex"
+uid="uid://dtxrkj7hvftvp"
+path="res://.godot/imported/background-1.png-5ba19e13c91f77ef8308743e5d06f092.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GO--GO--GO--/images/spritesheet_jumper.png"
-dest_files=["res://.godot/imported/spritesheet_jumper.png-f66191e1b898edebecb4942114106df2.ctex"]
+source_file="res://GO--GO--GO--/background-1.png"
+dest_files=["res://.godot/imported/background-1.png-5ba19e13c91f77ef8308743e5d06f092.ctex"]
 
 [params]
 
