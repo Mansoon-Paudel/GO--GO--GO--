@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0vnmk73h64qj"]
+
+[ext_resource type="Texture2D" uid="uid://dxyceflo281a3" path="res://GO--GO--GO--/images/istockphoto-1183252990-612x612-removebg-preview.png" id="1_ultu2"]
+
+[node name="Level-2" type="Node"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 236)
+texture = ExtResource("1_ultu2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 378.0
+offset_top = 421.0
+offset_right = 819.0
+offset_bottom = 558.0
+theme_override_font_sizes/font_size = 100
+text = "YOU WIN"
