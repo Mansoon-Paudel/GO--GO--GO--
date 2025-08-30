@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dqkvb5n58aks"
-path="res://.godot/imported/tundraCenter_rounded.png-1a10fa45fb438410d3e368e56e7583f5.ctex"
+uid="uid://bwylt4yr75v1j"
+path="res://.godot/imported/tilemap_packed.png-562d56fc4f01f7ac44830f1c7686694f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GO--GO--GO--/images/tundraCenter_rounded.png"
-dest_files=["res://.godot/imported/tundraCenter_rounded.png-1a10fa45fb438410d3e368e56e7583f5.ctex"]
+source_file="res://GO--GO--GO--/assets/tilemaps/tilemap_packed.png"
+dest_files=["res://.godot/imported/tilemap_packed.png-562d56fc4f01f7ac44830f1c7686694f.ctex"]
 
 [params]
 

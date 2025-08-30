@@ -27,10 +27,10 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
+		
 	else:
 		velocity.x = move_toward(velocity.x, 0, 14)
-
+		
 	move_and_slide()
-
 	var isleft=velocity.x<0
-	sprite2D.flip_h =isleft
+	sprite2D.flip_h = isleft

@@ -1,12 +1,14 @@
-[gd_scene load_steps=20 format=3 uid="uid://c3q88sg4bm184"]
+[gd_scene load_steps=23 format=3 uid="uid://c3q88sg4bm184"]
 
-[ext_resource type="Texture2D" uid="uid://yi6082m8deqe" path="res://GO--GO--GO--/images/vector_jumper.svg" id="1_tyruo"]
+[ext_resource type="Texture2D" uid="uid://yi6082m8deqe" path="res://GO--GO--GO--/assets/tilemaps/vector_jumper.svg" id="1_tyruo"]
 [ext_resource type="PackedScene" uid="uid://bct0rovnxfect" path="res://GO--GO--GO--/scenes/character_body_2d.tscn" id="2_hmd8l"]
 [ext_resource type="PackedScene" uid="uid://cthekfa6d63co" path="res://GO--GO--GO--/scenes/collectable.tscn" id="3_aqgys"]
-[ext_resource type="Texture2D" uid="uid://bwylt4yr75v1j" path="res://GO--GO--GO--/images/tilemap_packed.png" id="3_s175f"]
-[ext_resource type="Script" uid="uid://leke7uu5xi7" path="res://GO--GO--GO--/scenes/game_manager.gd" id="4_s175f"]
-[ext_resource type="Script" uid="uid://bb0uop60hymxa" path="res://GO--GO--GO--/scenes/animated_sprite_2d.gd" id="5_26bn2"]
+[ext_resource type="Texture2D" uid="uid://bwylt4yr75v1j" path="res://GO--GO--GO--/assets/tilemaps/tilemap_packed.png" id="3_s175f"]
+[ext_resource type="Script" uid="uid://leke7uu5xi7" path="res://GO--GO--GO--/scenes/scripts/game_manager.gd" id="4_s175f"]
+[ext_resource type="Script" uid="uid://bb0uop60hymxa" path="res://GO--GO--GO--/scenes/scripts/animated_sprite_2d.gd" id="5_26bn2"]
 [ext_resource type="PackedScene" uid="uid://sbcdb6s2hagj" path="res://GO--GO--GO--/scenes/finish.tscn" id="6_26bn2"]
+[ext_resource type="Script" uid="uid://b76k02s8kmdby" path="res://GO--GO--GO--/scenes/scripts/pause.gd" id="8_1724f"]
+[ext_resource type="FontFile" uid="uid://bvxaiwkh2o5t6" path="res://GO--GO--GO--/assets/Fonts/Tomorrow/Tomorrow-Bold.ttf" id="9_lcd47"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ec8lu"]
 load_path = "res://.godot/imported/background.svg-5a6db7a2514c13f6cc9c110976d3ff91.ctex"
@@ -7613,6 +7615,9 @@ animations = [{
 "speed": 4.0
 }]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y34j8"]
+bg_color = Color(0.529412, 0, 0.541176, 0.423529)
+
 [node name="Node" type="Node"]
 
 [node name="SceneObjects" type="Node" parent="."]
@@ -7668,15 +7673,15 @@ position = Vector2(-421, -328)
 unique_name_in_owner = true
 script = ExtResource("4_s175f")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="."]
 
-[node name="Panel" type="Panel" parent="CanvasLayer"]
+[node name="Panel" type="Panel" parent="UI"]
 offset_left = 17.0
 offset_top = 25.0
 offset_right = 117.0
 offset_bottom = 65.0
 
-[node name="Label" type="Label" parent="CanvasLayer/Panel"]
+[node name="Label" type="Label" parent="UI/Panel"]
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 11
@@ -7693,7 +7698,7 @@ theme_override_font_sizes/font_size = 30
 text = "0"
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Panel"]
+[node name="TextureRect" type="TextureRect" parent="UI/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -7701,14 +7706,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Panel/TextureRect"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="UI/Panel/TextureRect"]
 texture_filter = 1
 position = Vector2(22, 20)
 scale = Vector2(0.735306, 0.693183)
 sprite_frames = SubResource("SpriteFrames_ec8lu")
 script = ExtResource("5_26bn2")
 
-[node name="Label" type="Label" parent="CanvasLayer"]
+[node name="Label" type="Label" parent="UI"]
 texture_filter = 1
 offset_left = 14.0
 offset_top = 83.0
@@ -7718,3 +7723,64 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
 text = "Collect all the coins and reach the top"
+
+[node name="Pause" type="Node" parent="UI"]
+script = ExtResource("8_1724f")
+
+[node name="Pause-Panel" type="Panel" parent="UI/Pause"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_y34j8")
+
+[node name="Label" type="Label" parent="UI/Pause/Pause-Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.434
+anchor_right = 0.5
+anchor_bottom = 0.434
+offset_left = -229.0
+offset_top = -112.48
+offset_right = 230.0
+offset_bottom = -40.48
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("9_lcd47")
+theme_override_font_sizes/font_size = 60
+text = "GAME PAUSED"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Pause/Pause-Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.0
+offset_top = -72.0
+offset_right = 122.0
+offset_bottom = 19.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+
+[node name="Resume" type="Button" parent="UI/Pause/Pause-Panel/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_lcd47")
+theme_override_font_sizes/font_size = 29
+text = "Resume"
+
+[node name="Go main-menu" type="Button" parent="UI/Pause/Pause-Panel/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_fonts/font = ExtResource("9_lcd47")
+theme_override_font_sizes/font_size = 29
+text = "Main-Menu"
+
+[connection signal="pressed" from="UI/Pause/Pause-Panel/VBoxContainer/Resume" to="UI/Pause" method="_on_resume_pressed"]
+[connection signal="pressed" from="UI/Pause/Pause-Panel/VBoxContainer/Go main-menu" to="UI/Pause" method="_on_go_mainmenu_pressed"]

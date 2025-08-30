@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yi6082m8deqe"
-path="res://.godot/imported/vector_jumper.svg-3071deb88882c7d9fb2a904339da1d5e.ctex"
+uid="uid://b2hl2285i6hhy"
+path="res://.godot/imported/sheet.png-23cf0e3424f93d6be14c590e0b2724ca.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GO--GO--GO--/images/vector_jumper.svg"
-dest_files=["res://.godot/imported/vector_jumper.svg-3071deb88882c7d9fb2a904339da1d5e.ctex"]
+source_file="res://GO--GO--GO--/assets/tilemaps/sheet.png"
+dest_files=["res://.godot/imported/sheet.png-23cf0e3424f93d6be14c590e0b2724ca.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

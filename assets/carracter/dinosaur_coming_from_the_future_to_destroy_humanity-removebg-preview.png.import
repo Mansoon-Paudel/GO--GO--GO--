@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2hl2285i6hhy"
-path="res://.godot/imported/sheet.png-f9a10455ca907022d82cdc3948043131.ctex"
+uid="uid://pstcpsopqhuu"
+path="res://.godot/imported/dinosaur_coming_from_the_future_to_destroy_humanity-removebg-preview.png-797e12eb45a9cddc6301fccf37449357.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GO--GO--GO--/images/sheet.png"
-dest_files=["res://.godot/imported/sheet.png-f9a10455ca907022d82cdc3948043131.ctex"]
+source_file="res://GO--GO--GO--/assets/carracter/dinosaur_coming_from_the_future_to_destroy_humanity-removebg-preview.png"
+dest_files=["res://.godot/imported/dinosaur_coming_from_the_future_to_destroy_humanity-removebg-preview.png-797e12eb45a9cddc6301fccf37449357.ctex"]
 
 [params]
 

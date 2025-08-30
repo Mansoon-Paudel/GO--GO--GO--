@@ -1,3 +1,212 @@
-[gd_scene format=3 uid="uid://bl863tqpypk1x"]
+[gd_scene load_steps=10 format=3 uid="uid://ylyrhe7w8g8n"]
 
-[node name="Mainmenu" type="Node"]
+[ext_resource type="Script" uid="uid://chgaq2f82tfhj" path="res://GO--GO--GO--/scenes/scripts/main_menu.gd" id="1_818s7"]
+[ext_resource type="Texture2D" uid="uid://ch1wumbcouqd2" path="res://GO--GO--GO--/assets/images/GO--GO--GO.png" id="1_icjot"]
+[ext_resource type="Texture2D" uid="uid://pstcpsopqhuu" path="res://GO--GO--GO--/assets/carracter/dinosaur_coming_from_the_future_to_destroy_humanity-removebg-preview.png" id="2_pwyhg"]
+[ext_resource type="FontFile" uid="uid://bvxaiwkh2o5t6" path="res://GO--GO--GO--/assets/Fonts/Tomorrow/Tomorrow-Bold.ttf" id="4_mifh4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d6ttp"]
+bg_color = Color(0.537255, 0.443137, 0.815686, 1)
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 4
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_818s7"]
+bg_color = Color(0.96, 0.96, 1, 1)
+corner_radius_top_left = 60
+corner_radius_top_right = 60
+corner_radius_bottom_right = 60
+corner_radius_bottom_left = 60
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pwyhg"]
+bg_color = Color(0.43816, 0.385913, 0.589372, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 4
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mifh4"]
+bg_color = Color(0.439216, 0.384314, 0.588235, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 3
+shadow_offset = Vector2(3, 3)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1hre7"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_818s7")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -50.0
+offset_right = 2.0
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_icjot")
+expand_mode = 1
+
+[node name="Player" type="Panel" parent="."]
+texture_filter = 1
+layout_mode = 1
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 308.0
+offset_bottom = 98.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_d6ttp")
+
+[node name="Panel" type="Panel" parent="Player"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 13.0
+offset_top = -27.0
+offset_right = 68.0
+offset_bottom = 28.0
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_818s7")
+
+[node name="TextureRect" type="TextureRect" parent="Player/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.5
+offset_top = -30.5
+offset_right = 20.5
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_pwyhg")
+expand_mode = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Player"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -62.0
+offset_top = -33.0
+offset_right = 120.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("4_mifh4")
+theme_override_styles/background = SubResource("StyleBoxFlat_pwyhg")
+
+[node name="Label" type="Label" parent="Player"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -61.0
+offset_top = 7.0
+offset_right = 121.0
+offset_bottom = 30.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_mifh4")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mifh4")
+text = "PLAYER 456"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player2" type="Panel" parent="."]
+texture_filter = 1
+layout_mode = 1
+offset_left = 952.0
+offset_top = 24.0
+offset_right = 1236.0
+offset_bottom = 98.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_d6ttp")
+
+[node name="Label" type="Label" parent="Player2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.0
+offset_top = -29.5
+offset_right = 123.0
+offset_bottom = 29.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_mifh4")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mifh4")
+text = "PLAYER 456 
+YOU HAVE WON THE GAME!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="lv1" type="Panel" parent="."]
+texture_filter = 1
+layout_mode = 1
+offset_left = 269.0
+offset_top = 535.0
+offset_right = 553.0
+offset_bottom = 609.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_d6ttp")
+
+[node name="Button 1" type="Button" parent="lv1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_mifh4")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_1hre7")
+text = "Level 1"
+
+[node name="lv2" type="Panel" parent="."]
+texture_filter = 1
+layout_mode = 1
+offset_left = 733.0
+offset_top = 535.0
+offset_right = 1017.0
+offset_bottom = 609.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_d6ttp")
+
+[node name="Button 2" type="Button" parent="lv2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_mifh4")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_1hre7")
+text = "Level 2"
+
+[connection signal="pressed" from="lv1/Button 1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="lv2/Button 2" to="." method="_on_button_2_pressed"]

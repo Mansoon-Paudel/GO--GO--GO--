@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxyceflo281a3"
-path="res://.godot/imported/istockphoto-1183252990-612x612-removebg-preview.png-5538e7fde839774e6d44830cc0c4a61e.ctex"
+uid="uid://cy0obuwfk3cy4"
+path="res://.godot/imported/charrecter.png-880fdc745944685599382d3cdc994244.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GO--GO--GO--/images/istockphoto-1183252990-612x612-removebg-preview.png"
-dest_files=["res://.godot/imported/istockphoto-1183252990-612x612-removebg-preview.png-5538e7fde839774e6d44830cc0c4a61e.ctex"]
+source_file="res://GO--GO--GO--/assets/carracter/charrecter.png"
+dest_files=["res://.godot/imported/charrecter.png-880fdc745944685599382d3cdc994244.ctex"]
 
 [params]
 

@@ -7,8 +7,3 @@ func _on_body_entered(body: Node2D) -> void:
 			get_tree().change_scene_to_file("res://GO--GO--GO--/scenes/level-2.tscn")
 		else:
 			print("Not enough coins! Need 4.")
-
-
-func _on_spikes_body_exited(body: Node2D) -> void:
-	if (body.name=="CharacterBody2D"):
-		get_tree().reload_current_scene()

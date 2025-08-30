@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cy0obuwfk3cy4"
-path="res://.godot/imported/charrecter.png-fd48da051a755afe1c5304cbf2b0d15e.ctex"
+uid="uid://l7lw3rx8bep1"
+path="res://.godot/imported/background.svg-5348114a42840b76922fcd93ff56b094.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GO--GO--GO--/images/charrecter.png"
-dest_files=["res://.godot/imported/charrecter.png-fd48da051a755afe1c5304cbf2b0d15e.ctex"]
+source_file="res://GO--GO--GO--/assets/images/background.svg"
+dest_files=["res://.godot/imported/background.svg-5348114a42840b76922fcd93ff56b094.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
