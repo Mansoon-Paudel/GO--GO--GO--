@@ -1,6 +1,8 @@
 extends Node
 
-@onready var pause_panel: Panel = $"Pause-Panel"
+@onready var pause_panel: Panel = $"CanvasLayer/Pause-Panel"
+@onready var options: Panel = $Options/Options
+@onready var panel: Panel = $"Options/Pause-Panel2"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,6 +25,19 @@ func _on_resume_pressed() -> void:
 
 
 func _on_go_mainmenu_pressed() -> void:
-	get_tree().paused=false
 	pause_panel.hide()
+	get_tree().paused=false
 	get_tree().change_scene_to_file("res://GO--GO--GO--/scenes/main-menu.tscn")
+	
+
+
+func _on_options_pressed() -> void:
+	panel.show()
+	options.show()
+	pause_panel.hide()
+
+
+func _on_exit_pressed() -> void:
+	panel.hide()
+	options.hide()
+	pause_panel.show()

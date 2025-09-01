@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://ylyrhe7w8g8n"]
+[gd_scene load_steps=11 format=3 uid="uid://ylyrhe7w8g8n"]
 
 [ext_resource type="Script" uid="uid://chgaq2f82tfhj" path="res://GO--GO--GO--/scenes/scripts/main_menu.gd" id="1_818s7"]
 [ext_resource type="Texture2D" uid="uid://ch1wumbcouqd2" path="res://GO--GO--GO--/assets/images/GO--GO--GO.png" id="1_icjot"]
@@ -32,6 +32,9 @@ corner_radius_bottom_left = 4
 shadow_size = 4
 shadow_offset = Vector2(3, 3)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j0pnk"]
+bg_color = Color(0.603922, 0.52549, 0.843137, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mifh4"]
 bg_color = Color(0.439216, 0.384314, 0.588235, 1)
 corner_radius_top_left = 4
@@ -59,7 +62,7 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -50.0
+offset_top = -123.0
 offset_right = 2.0
 offset_bottom = 59.0
 grow_horizontal = 2
@@ -120,6 +123,8 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_fonts/font = ExtResource("4_mifh4")
 theme_override_styles/background = SubResource("StyleBoxFlat_pwyhg")
+theme_override_styles/fill = SubResource("StyleBoxFlat_j0pnk")
+value = 90.0
 
 [node name="Label" type="Label" parent="Player"]
 layout_mode = 1
@@ -137,7 +142,7 @@ text = "PLAYER 456"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Player2" type="Panel" parent="."]
+[node name="winner" type="Panel" parent="."]
 texture_filter = 1
 layout_mode = 1
 offset_left = 952.0
@@ -146,7 +151,7 @@ offset_right = 1236.0
 offset_bottom = 98.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_d6ttp")
 
-[node name="Label" type="Label" parent="Player2"]
+[node name="Label" type="Label" parent="winner"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -176,6 +181,7 @@ offset_bottom = 609.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_d6ttp")
 
 [node name="Button 1" type="Button" parent="lv1"]
+process_mode = 3
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -197,6 +203,7 @@ offset_bottom = 609.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_d6ttp")
 
 [node name="Button 2" type="Button" parent="lv2"]
+process_mode = 3
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
