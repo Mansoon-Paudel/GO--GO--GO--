@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://bb0uop60hymxa" path="res://GO--GO--GO--/scenes/scripts/animated_sprite_2d.gd" id="8_m1b5t"]
 [ext_resource type="Script" uid="uid://517o2fv1dfei" path="res://GO--GO--GO--/scenes/scripts/spikes.gd" id="9_2ijqo"]
 [ext_resource type="Script" uid="uid://ci5hplu8ub26n" path="res://GO--GO--GO--/scenes/scripts/lava.gd" id="9_m1b5t"]
-[ext_resource type="AudioStream" uid="uid://dsyddln4lwr05" path="res://GO--GO--GO--/assets/sounds/this-8-bit-music-short-245264.mp3" id="11_12sli"]
+[ext_resource type="AudioStream" uid="uid://bexuwglicydfm" path="res://GO--GO--GO--/assets/music/time_for_adventure.mp3" id="11_12sli"]
 [ext_resource type="Script" uid="uid://b76k02s8kmdby" path="res://GO--GO--GO--/scenes/scripts/pause.gd" id="13_du1w5"]
 [ext_resource type="FontFile" uid="uid://bvxaiwkh2o5t6" path="res://GO--GO--GO--/assets/Fonts/Tomorrow/Tomorrow-Bold.ttf" id="14_2rd6b"]
 [ext_resource type="Script" uid="uid://dgke830555xts" path="res://discord_manager.gd" id="15_2rd6b"]
@@ -10698,10 +10698,10 @@ corner_radius_top_left = 4
 corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m30e1"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_12sli"]
 bg_color = Color(0.176471, 0.176471, 0.176471, 0.431373)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rak30"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m30e1"]
 bg_color = Color(1, 1, 1, 0.94902)
 border_width_left = 1
 border_width_top = 1
@@ -10714,18 +10714,18 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_yammt"]
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_rak30"]
 color = Color(1, 1, 1, 1)
 thickness = 6
 
-[sub_resource type="StyleBoxLine" id="StyleBoxLine_7rml1"]
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_yammt"]
 color = Color(0.819192, 0.715516, 1, 1)
 thickness = 6
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3j2d8"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7rml1"]
 bg_color = Color(0.814562, 0.677657, 1, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xcute"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3j2d8"]
 bg_color = Color(1, 1, 1, 1)
 border_width_left = 1
 border_width_top = 1
@@ -10737,7 +10737,7 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yims0"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xcute"]
 bg_color = Color(1, 1, 1, 0)
 border_width_left = 1
 border_width_top = 1
@@ -10745,7 +10745,7 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v5f3f"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yims0"]
 bg_color = Color(1, 1, 1, 1)
 border_width_left = 1
 border_width_top = 1
@@ -10771,7 +10771,7 @@ offset_right = 3604.44
 offset_bottom = 1005.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.47102, 0.517858)
+scale = Vector2(0.47102, 0.522308)
 texture = SubResource("CompressedTexture2D_ec8lu")
 
 [node name="TileMap" type="TileMap" parent="SceneObjects"]
@@ -10836,7 +10836,7 @@ script = ExtResource("9_m1b5t")
 position = Vector2(-9, 4.5)
 shape = SubResource("RectangleShape2D_2nnk2")
 
-[node name="This-8-bit-music-short-245264" type="AudioStreamPlayer" parent="SceneObjects"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="SceneObjects"]
 stream = ExtResource("11_12sli")
 autoplay = true
 bus = &"Music"
@@ -10981,13 +10981,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -207.5
-offset_top = -127.5
-offset_right = 207.5
-offset_bottom = 127.5
+offset_left = -207.0
+offset_top = -127.0
+offset_right = 208.0
+offset_bottom = 204.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_m30e1")
+theme_override_styles/panel = SubResource("StyleBoxFlat_12sli")
 
 [node name="Option-Text" type="Label" parent="CanvasLayer/Pause/Options/Options"]
 layout_mode = 1
@@ -11019,10 +11019,10 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("14_2rd6b")
-theme_override_styles/normal = SubResource("StyleBoxFlat_rak30")
+theme_override_styles/normal = SubResource("StyleBoxFlat_m30e1")
 text = "Exit"
 
-[node name="SoundControl" type="HSlider" parent="CanvasLayer/Pause/Options/Options"]
+[node name="MusicControl" type="HSlider" parent="CanvasLayer/Pause/Options/Options"]
 process_mode = 3
 texture_filter = 1
 layout_mode = 1
@@ -11034,16 +11034,16 @@ offset_top = 96.5
 offset_right = 119.5
 offset_bottom = 124.5
 grow_horizontal = 2
-theme_override_styles/slider = SubResource("StyleBoxLine_yammt")
-theme_override_styles/grabber_area = SubResource("StyleBoxLine_7rml1")
-theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_3j2d8")
+theme_override_styles/slider = SubResource("StyleBoxLine_rak30")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_yammt")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_7rml1")
 max_value = 1.0
 step = 0.05
 value = 0.5
 script = ExtResource("15_dl2gv")
 audio_bus_name = "Music"
 
-[node name="Volume-Text" type="Label" parent="CanvasLayer/Pause/Options/Options"]
+[node name="Music-Text" type="Label" parent="CanvasLayer/Pause/Options/Options"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 5
@@ -11056,8 +11056,47 @@ offset_bottom = 92.5
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("14_2rd6b")
-theme_override_styles/normal = SubResource("StyleBoxFlat_xcute")
-text = "Volume"
+theme_override_styles/normal = SubResource("StyleBoxFlat_3j2d8")
+text = "Music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFXControl" type="HSlider" parent="CanvasLayer/Pause/Options/Options"]
+process_mode = 3
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -119.5
+offset_top = 168.0
+offset_right = 119.5
+offset_bottom = 196.0
+grow_horizontal = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_rak30")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_yammt")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_7rml1")
+max_value = 1.0
+step = 0.05
+value = 0.5
+script = ExtResource("15_dl2gv")
+audio_bus_name = "SFX"
+
+[node name="SFX-Text" type="Label" parent="CanvasLayer/Pause/Options/Options"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -99.5
+offset_top = 136.0
+offset_right = 99.5
+offset_bottom = 164.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("14_2rd6b")
+theme_override_styles/normal = SubResource("StyleBoxFlat_3j2d8")
+text = "SFX"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -11070,16 +11109,16 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -99.5
-offset_top = 8.0
+offset_top = 39.5
 offset_right = 99.5
-offset_bottom = 36.0
+offset_bottom = 67.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/align_to_largest_stylebox = 1
 theme_override_fonts/font = ExtResource("14_2rd6b")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_yims0")
-theme_override_styles/normal = SubResource("StyleBoxFlat_v5f3f")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xcute")
+theme_override_styles/normal = SubResource("StyleBoxFlat_yims0")
 theme_override_constants/check_v_offset = 0
 text = "Full Screen"
 script = ExtResource("16_12sli")
@@ -11093,6 +11132,6 @@ script = ExtResource("15_2rd6b")
 [connection signal="pressed" from="CanvasLayer/Pause/CanvasLayer/Pause-Panel/VBoxContainer/Resume" to="CanvasLayer/Pause" method="_on_resume_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/CanvasLayer/Pause-Panel/VBoxContainer/Options" to="CanvasLayer/Pause" method="_on_options_pressed"]
 [connection signal="pressed" from="CanvasLayer/Pause/CanvasLayer/Pause-Panel/VBoxContainer/Go main-menu" to="CanvasLayer/Pause" method="_on_go_mainmenu_pressed"]
-[connection signal="pressed" from="CanvasLayer/Pause/Options/Options/Exit" to="CanvasLayer/Pause" method="_on_exit_pressed"]
-[connection signal="value_changed" from="CanvasLayer/Pause/Options/Options/SoundControl" to="CanvasLayer/Pause/Options/Options/SoundControl" method="_on_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Pause/Options/Options/MusicControl" to="CanvasLayer/Pause/Options/Options/MusicControl" method="_on_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/Pause/Options/Options/SFXControl" to="CanvasLayer/Pause/Options/Options/SFXControl" method="_on_value_changed"]
 [connection signal="pressed" from="CanvasLayer/Pause/Options/Options/Full-Screen" to="CanvasLayer/Pause/Options/Options/Full-Screen" method="_on_pressed"]

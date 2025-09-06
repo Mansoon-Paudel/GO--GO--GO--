@@ -1,7 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://bct0rovnxfect"]
+[gd_scene load_steps=20 format=3 uid="uid://bct0rovnxfect"]
 
 [ext_resource type="Texture2D" uid="uid://cy0obuwfk3cy4" path="res://GO--GO--GO--/assets/carracter/charrecter.png" id="1_f50pn"]
 [ext_resource type="Script" uid="uid://c8illij8kn6am" path="res://GO--GO--GO--/scenes/scripts/character_body_2d.gd" id="1_ij6vw"]
+[ext_resource type="AudioStream" uid="uid://yo3uinluneep" path="res://GO--GO--GO--/assets/sounds/jump.wav" id="3_uighc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ij6vw"]
 atlas = ExtResource("1_f50pn")
@@ -137,3 +138,7 @@ sprite_frames = SubResource("SpriteFrames_186t8")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(7.66667, 9.33333)
 shape = SubResource("CapsuleShape2D_d0jvi")
+
+[node name="Jump-sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_uighc")
+bus = &"SFX"

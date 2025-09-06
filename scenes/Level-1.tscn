@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://c3q88sg4bm184"]
+[gd_scene load_steps=37 format=3 uid="uid://c3q88sg4bm184"]
 
 [ext_resource type="Texture2D" uid="uid://yi6082m8deqe" path="res://GO--GO--GO--/assets/tilemaps/vector_jumper.svg" id="1_tyruo"]
 [ext_resource type="PackedScene" uid="uid://bct0rovnxfect" path="res://GO--GO--GO--/scenes/character_body_2d.tscn" id="2_hmd8l"]
@@ -11,7 +11,6 @@
 [ext_resource type="FontFile" uid="uid://bvxaiwkh2o5t6" path="res://GO--GO--GO--/assets/Fonts/Tomorrow/Tomorrow-Bold.ttf" id="9_lcd47"]
 [ext_resource type="Script" uid="uid://dgke830555xts" path="res://discord_manager.gd" id="10_lcd47"]
 [ext_resource type="Script" uid="uid://bw6vfyer3iuty" path="res://GO--GO--GO--/scenes/scripts/sound_control.gd" id="11_gpyx6"]
-[ext_resource type="AudioStream" uid="uid://dsyddln4lwr05" path="res://GO--GO--GO--/assets/sounds/this-8-bit-music-short-245264.mp3" id="11_y34j8"]
 [ext_resource type="Script" uid="uid://doq7s7tgsgjhb" path="res://GO--GO--GO--/scenes/scripts/full_screen.gd" id="12_jg74m"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ec8lu"]
@@ -7752,11 +7751,6 @@ position = Vector2(502, -178)
 [node name="Collectable2" parent="SceneObjects/collectable" instance=ExtResource("3_aqgys")]
 position = Vector2(-421, -328)
 
-[node name="This-8-bit-music-short-245264" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_y34j8")
-autoplay = true
-bus = &"Music"
-
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("4_s175f")
@@ -7903,10 +7897,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -207.5
-offset_top = -127.5
-offset_right = 207.5
-offset_bottom = 127.5
+offset_left = -207.0
+offset_top = -127.0
+offset_right = 208.0
+offset_bottom = 204.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_lcd47")
@@ -7944,7 +7938,7 @@ theme_override_fonts/font = ExtResource("9_lcd47")
 theme_override_styles/normal = SubResource("StyleBoxFlat_1724f")
 text = "Exit"
 
-[node name="SoundControl" type="HSlider" parent="UI/Pause/Options/Options"]
+[node name="MusicControl" type="HSlider" parent="UI/Pause/Options/Options"]
 process_mode = 3
 texture_filter = 1
 layout_mode = 1
@@ -7965,7 +7959,7 @@ value = 0.5
 script = ExtResource("11_gpyx6")
 audio_bus_name = "Music"
 
-[node name="Volume-Text" type="Label" parent="UI/Pause/Options/Options"]
+[node name="Music-Text" type="Label" parent="UI/Pause/Options/Options"]
 texture_filter = 1
 layout_mode = 1
 anchors_preset = 5
@@ -7979,7 +7973,46 @@ grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("9_lcd47")
 theme_override_styles/normal = SubResource("StyleBoxFlat_2mfq7")
-text = "Volume"
+text = "Music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFXControl" type="HSlider" parent="UI/Pause/Options/Options"]
+process_mode = 3
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -119.5
+offset_top = 168.0
+offset_right = 119.5
+offset_bottom = 196.0
+grow_horizontal = 2
+theme_override_styles/slider = SubResource("StyleBoxLine_jg74m")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_oxy1k")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_8grea")
+max_value = 1.0
+step = 0.05
+value = 0.5
+script = ExtResource("11_gpyx6")
+audio_bus_name = "SFX"
+
+[node name="SFX-Text" type="Label" parent="UI/Pause/Options/Options"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -99.5
+offset_top = 136.0
+offset_right = 99.5
+offset_bottom = 164.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_lcd47")
+theme_override_styles/normal = SubResource("StyleBoxFlat_2mfq7")
+text = "SFX"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -7992,9 +8025,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -99.5
-offset_top = 8.0
+offset_top = 39.5
 offset_right = 99.5
-offset_bottom = 36.0
+offset_bottom = 67.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -8013,5 +8046,6 @@ script = ExtResource("10_lcd47")
 [connection signal="pressed" from="UI/Pause/CanvasLayer/Pause-Panel/VBoxContainer/Options" to="UI/Pause" method="_on_options_pressed"]
 [connection signal="pressed" from="UI/Pause/CanvasLayer/Pause-Panel/VBoxContainer/Go main-menu" to="UI/Pause" method="_on_go_mainmenu_pressed"]
 [connection signal="pressed" from="UI/Pause/Options/Options/Exit" to="UI/Pause" method="_on_exit_pressed"]
-[connection signal="value_changed" from="UI/Pause/Options/Options/SoundControl" to="UI/Pause/Options/Options/SoundControl" method="_on_value_changed"]
+[connection signal="value_changed" from="UI/Pause/Options/Options/MusicControl" to="UI/Pause/Options/Options/MusicControl" method="_on_value_changed"]
+[connection signal="value_changed" from="UI/Pause/Options/Options/SFXControl" to="UI/Pause/Options/Options/SFXControl" method="_on_value_changed"]
 [connection signal="pressed" from="UI/Pause/Options/Options/Full-Screen" to="UI/Pause/Options/Options/Full-Screen" method="_on_pressed"]
