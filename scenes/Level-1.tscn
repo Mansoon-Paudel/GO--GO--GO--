@@ -7728,7 +7728,8 @@ layer_0/tile_data = PackedInt32Array(-65465, 1245184, 33, -65466, 1245184, 33, -
 position = Vector2(1195, 293)
 
 [node name="CharacterBody2D" parent="SceneObjects" instance=ExtResource("2_hmd8l")]
-position = Vector2(150, 645)
+z_index = 10
+position = Vector2(150, 648)
 scale = Vector2(2, 2)
 
 [node name="Camera2D" type="Camera2D" parent="SceneObjects/CharacterBody2D"]
@@ -7743,13 +7744,48 @@ position_smoothing_speed = 4.0
 position = Vector2(-424, -123)
 
 [node name="Collectable3" parent="SceneObjects/collectable" instance=ExtResource("3_aqgys")]
-position = Vector2(378, -469)
+position = Vector2(448, -452)
 
 [node name="Collectable" parent="SceneObjects/collectable" instance=ExtResource("3_aqgys")]
 position = Vector2(502, -178)
 
 [node name="Collectable2" parent="SceneObjects/collectable" instance=ExtResource("3_aqgys")]
 position = Vector2(-421, -328)
+
+[node name="Instruction" type="Node" parent="SceneObjects"]
+
+[node name="Movement" type="Label" parent="SceneObjects/Instruction"]
+texture_filter = 1
+offset_left = 61.0
+offset_top = 693.0
+offset_right = 269.0
+offset_bottom = 716.0
+theme_override_colors/font_color = Color(0.972171, 0.874096, 0.784245, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_lcd47")
+text = "A,D to move Space to Jump"
+
+[node name="Insto1" type="Label" parent="SceneObjects/Instruction"]
+offset_left = 902.0
+offset_top = 333.0
+offset_right = 1033.0
+offset_bottom = 356.0
+theme_override_colors/font_color = Color(0.872689, 0.9602, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_lcd47")
+text = "Collect all coins"
+
+[node name="Insto2" type="Label" parent="SceneObjects/Instruction"]
+texture_filter = 1
+offset_left = 123.0
+offset_top = 178.0
+offset_right = 316.0
+offset_bottom = 221.0
+theme_override_colors/font_color = Color(0.815686, 0.937255, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("9_lcd47")
+text = "ESC For Magic...
+You may win the Game"
 
 [node name="GameManager" type="Node" parent="."]
 unique_name_in_owner = true
@@ -7760,7 +7796,7 @@ script = ExtResource("4_s175f")
 [node name="Panel" type="Panel" parent="UI"]
 offset_left = 17.0
 offset_top = 25.0
-offset_right = 117.0
+offset_right = 120.0
 offset_bottom = 65.0
 
 [node name="Label" type="Label" parent="UI/Panel"]
@@ -7772,6 +7808,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -43.0
 offset_top = -1.0
+offset_right = -5.0
 offset_bottom = 1.0
 grow_horizontal = 0
 grow_vertical = 2
@@ -7780,31 +7817,12 @@ theme_override_font_sizes/font_size = 30
 text = "0"
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="UI/Panel"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="UI/Panel/TextureRect"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="UI/Panel"]
 texture_filter = 1
 position = Vector2(22, 20)
 scale = Vector2(0.735306, 0.693183)
 sprite_frames = SubResource("SpriteFrames_ec8lu")
 script = ExtResource("5_26bn2")
-
-[node name="Label" type="Label" parent="UI"]
-texture_filter = 1
-offset_left = 14.0
-offset_top = 83.0
-offset_right = 558.0
-offset_bottom = 125.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 30
-text = "Collect all the coins and reach the top"
 
 [node name="Pause" type="Node" parent="UI"]
 script = ExtResource("8_1724f")

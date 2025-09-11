@@ -120,9 +120,8 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d0jvi"]
-radius = 5.66666
-height = 20.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uighc"]
+size = Vector2(10, 20)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(-7, -13)
@@ -137,7 +136,7 @@ sprite_frames = SubResource("SpriteFrames_186t8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(7.66667, 9.33333)
-shape = SubResource("CapsuleShape2D_d0jvi")
+shape = SubResource("RectangleShape2D_uighc")
 
 [node name="Jump-sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_uighc")
