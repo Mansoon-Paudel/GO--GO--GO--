@@ -7,6 +7,6 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	if (body.name == "CharacterBody2D"):  
 		if game_manager.points >= 4:
-			get_tree().change_scene_to_file("res://GO--GO--GO--/scenes/main-menu.tscn")
+			get_tree().change_scene_to_file("res://GO--GO--GO--/scenes/scenes/main-menu.tscn")
 		else:
 			print("Not enough coins!")

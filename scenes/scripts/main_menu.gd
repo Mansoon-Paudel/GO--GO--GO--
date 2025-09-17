@@ -14,10 +14,15 @@ func _process(delta: float) -> void:
 
 
 func _on_button_2_pressed() -> void:
-	get_tree().change_scene_to_file("res://GO--GO--GO--/scenes/level-2.tscn")
+	get_tree().change_scene_to_file("res://GO--GO--GO--/scenes/scenes/level-2.tscn")
 	
 	
 
 
 func _on_button_1_pressed() -> void:
-	get_tree().change_scene_to_file("res://GO--GO--GO--/scenes/Level-1.tscn")
+	get_tree().change_scene_to_file("res://GO--GO--GO--/scenes/scenes/Level-1.tscn")
+
+
+
+func _on_button_3_pressed() -> void:
+	get_tree().change_scene_to_file("res://GO--GO--GO--/scenes/scenes/Open World.tscn")

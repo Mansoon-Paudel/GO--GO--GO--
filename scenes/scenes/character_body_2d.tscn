@@ -12,19 +12,19 @@ region = Rect2(0, 0, 32, 32)
 atlas = ExtResource("1_f50pn")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_wyqjk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_uighc"]
 atlas = ExtResource("1_f50pn")
 region = Rect2(64, 160, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k85er"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_c6qnf"]
 atlas = ExtResource("1_f50pn")
 region = Rect2(96, 160, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ebjds"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2xgra"]
 atlas = ExtResource("1_f50pn")
 region = Rect2(128, 160, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_y1dt5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_83em4"]
 atlas = ExtResource("1_f50pn")
 region = Rect2(160, 160, 32, 32)
 
@@ -75,16 +75,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wyqjk")
+"texture": SubResource("AtlasTexture_uighc")
+}, {
+"duration": 1.4,
+"texture": SubResource("AtlasTexture_c6qnf")
+}, {
+"duration": 1.8,
+"texture": SubResource("AtlasTexture_2xgra")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k85er")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ebjds")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y1dt5")
+"texture": SubResource("AtlasTexture_83em4")
 }],
 "loop": true,
 "name": &"jump",
@@ -120,8 +120,9 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uighc"]
-size = Vector2(10, 20)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uighc"]
+radius = 6.33333
+height = 22.6667
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 position = Vector2(-7, -13)
@@ -133,10 +134,12 @@ texture_filter = 1
 position = Vector2(10, 2)
 scale = Vector2(1.25, 1.25)
 sprite_frames = SubResource("SpriteFrames_186t8")
+animation = &"jump"
+frame_progress = 0.398232
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(7.66667, 9.33333)
-shape = SubResource("RectangleShape2D_uighc")
+shape = SubResource("CapsuleShape2D_uighc")
 
 [node name="Jump-sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_uighc")

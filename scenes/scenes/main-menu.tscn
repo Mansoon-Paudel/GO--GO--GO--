@@ -1,9 +1,9 @@
 [gd_scene load_steps=11 format=3 uid="uid://ylyrhe7w8g8n"]
 
-[ext_resource type="Script" uid="uid://chgaq2f82tfhj" path="res://GO--GO--GO--/scenes/scripts/main_menu.gd" id="1_818s7"]
-[ext_resource type="Texture2D" uid="uid://ch1wumbcouqd2" path="res://GO--GO--GO--/assets/images/GO--GO--GO.png" id="1_icjot"]
-[ext_resource type="Texture2D" uid="uid://pstcpsopqhuu" path="res://GO--GO--GO--/assets/carracter/dinosaur_coming_from_the_future_to_destroy_humanity-removebg-preview.png" id="2_pwyhg"]
-[ext_resource type="FontFile" uid="uid://bvxaiwkh2o5t6" path="res://GO--GO--GO--/assets/Fonts/Tomorrow/Tomorrow-Bold.ttf" id="4_mifh4"]
+[ext_resource type="Script" uid="uid://chgaq2f82tfhj" path="res://GO--GO--GO--/scenes/scripts/main_menu.gd" id="1_85u4j"]
+[ext_resource type="Texture2D" uid="uid://ch1wumbcouqd2" path="res://GO--GO--GO--/assets/images/GO--GO--GO.png" id="2_t4fqj"]
+[ext_resource type="Texture2D" uid="uid://pstcpsopqhuu" path="res://GO--GO--GO--/assets/carracter/dinosaur_coming_from_the_future_to_destroy_humanity-removebg-preview.png" id="3_4l7p1"]
+[ext_resource type="FontFile" uid="uid://bvxaiwkh2o5t6" path="res://GO--GO--GO--/assets/Fonts/Tomorrow/Tomorrow-Bold.ttf" id="4_57yg3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d6ttp"]
 bg_color = Color(0.537255, 0.443137, 0.815686, 1)
@@ -54,7 +54,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_818s7")
+script = ExtResource("1_85u4j")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 texture_filter = 1
@@ -62,12 +62,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -123.0
-offset_right = 2.0
-offset_bottom = 59.0
+offset_left = 1.0
+offset_top = -184.0
+offset_right = 3.0
+offset_bottom = 32.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_icjot")
+texture = ExtResource("2_t4fqj")
 expand_mode = 1
 
 [node name="Player" type="Panel" parent="."]
@@ -105,7 +106,7 @@ offset_right = 20.5
 offset_bottom = 22.5
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_pwyhg")
+texture = ExtResource("3_4l7p1")
 expand_mode = 1
 
 [node name="ProgressBar" type="ProgressBar" parent="Player"]
@@ -121,7 +122,7 @@ offset_right = 120.0
 offset_bottom = -6.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_fonts/font = ExtResource("4_mifh4")
+theme_override_fonts/font = ExtResource("4_57yg3")
 theme_override_styles/background = SubResource("StyleBoxFlat_pwyhg")
 theme_override_styles/fill = SubResource("StyleBoxFlat_j0pnk")
 value = 90.0
@@ -136,7 +137,7 @@ offset_top = 7.0
 offset_right = 121.0
 offset_bottom = 30.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("4_mifh4")
+theme_override_fonts/font = ExtResource("4_57yg3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_mifh4")
 text = "PLAYER 456"
 horizontal_alignment = 1
@@ -164,20 +165,20 @@ offset_right = 123.0
 offset_bottom = 29.5
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_mifh4")
+theme_override_fonts/font = ExtResource("4_57yg3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_mifh4")
 text = "PLAYER 456 
-YOU HAVE WON THE GAME!"
+YOU  WON THE TUTORIAL!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="lv1" type="Panel" parent="."]
 texture_filter = 1
 layout_mode = 1
-offset_left = 269.0
-offset_top = 535.0
-offset_right = 553.0
-offset_bottom = 609.0
+offset_left = 274.0
+offset_top = 482.0
+offset_right = 558.0
+offset_bottom = 556.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_d6ttp")
 
 [node name="Button 1" type="Button" parent="lv1"]
@@ -188,7 +189,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_mifh4")
+theme_override_fonts/font = ExtResource("4_57yg3")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_1hre7")
 text = "Level 1"
@@ -196,10 +197,10 @@ text = "Level 1"
 [node name="lv2" type="Panel" parent="."]
 texture_filter = 1
 layout_mode = 1
-offset_left = 733.0
-offset_top = 535.0
-offset_right = 1017.0
-offset_bottom = 609.0
+offset_left = 738.0
+offset_top = 482.0
+offset_right = 1022.0
+offset_bottom = 556.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_d6ttp")
 
 [node name="Button 2" type="Button" parent="lv2"]
@@ -210,10 +211,36 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_mifh4")
+theme_override_fonts/font = ExtResource("4_57yg3")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_1hre7")
 text = "Level 2"
 
+[node name="lv3" type="Panel" parent="."]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 1
+offset_left = 515.0
+offset_top = 593.0
+offset_right = 799.0
+offset_bottom = 667.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_d6ttp")
+
+[node name="Button 3" type="Button" parent="lv3"]
+process_mode = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 1.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_57yg3")
+theme_override_font_sizes/font_size = 44
+theme_override_styles/normal = SubResource("StyleBoxFlat_1hre7")
+text = "Open World"
+
 [connection signal="pressed" from="lv1/Button 1" to="." method="_on_button_1_pressed"]
 [connection signal="pressed" from="lv2/Button 2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="lv3/Button 3" to="." method="_on_button_3_pressed"]

@@ -27,7 +27,7 @@ func _on_resume_pressed() -> void:
 func _on_go_mainmenu_pressed() -> void:
 	pause_panel.hide()
 	get_tree().paused=false
-	get_tree().change_scene_to_file("res://GO--GO--GO--/scenes/main-menu.tscn")
+	get_tree().change_scene_to_file("res://GO--GO--GO--/scenes/scenes/main-menu.tscn")
 	
 
 

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://g0725a0m6oh6"]
+
+[ext_resource type="Texture2D" uid="uid://cxty1omc47x8y" path="res://GO--GO--GO--/assets/mapitems/platforms.png" id="1_ce5r6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxcnw"]
+size = Vector2(64.5001, 12.5)
+
+[node name="Platform" type="AnimatableBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(9.5, -5)
+scale = Vector2(2.0303, 1.55556)
+texture = ExtResource("1_ce5r6")
+region_enabled = true
+region_rect = Rect2(15.3887, 0, 33.2169, 9.26082)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8.74997, -5.25)
+shape = SubResource("RectangleShape2D_qxcnw")
+one_way_collision = true
+one_way_collision_margin = 5.0
