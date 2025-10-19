@@ -121,24 +121,22 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_uighc"]
-radius = 6.33333
-height = 22.6667
+radius = 8.0
+height = 26.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
-position = Vector2(-7, -13)
-scale = Vector2(1.5, 1.5)
 script = ExtResource("1_ij6vw")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(10, 2)
-scale = Vector2(1.25, 1.25)
+position = Vector2(5.5, -2.04651)
+scale = Vector2(1.21875, 1.24709)
 sprite_frames = SubResource("SpriteFrames_186t8")
 animation = &"jump"
 frame_progress = 0.398232
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(7.66667, 9.33333)
+position = Vector2(3, 2)
 shape = SubResource("CapsuleShape2D_uighc")
 
 [node name="Jump-sound" type="AudioStreamPlayer2D" parent="."]

@@ -7,6 +7,7 @@ const COYOTE_TIME = 0.13
 @onready var jump_sound: AudioStreamPlayer2D = $"Jump-sound"
 @onready var sprite2D = $Sprite2D
 
+
 var coyote_timer = 0.0
 
 func _physics_process(delta: float) -> void:

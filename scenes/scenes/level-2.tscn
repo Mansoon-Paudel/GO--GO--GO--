@@ -1,6 +1,7 @@
 [gd_scene load_steps=49 format=3 uid="uid://b0uyfdna1511u"]
 
 [ext_resource type="Texture2D" uid="uid://yi6082m8deqe" path="res://GO--GO--GO--/assets/tilemaps/vector_jumper.svg" id="1_dmstv"]
+[ext_resource type="Texture2D" uid="uid://l7lw3rx8bep1" path="res://GO--GO--GO--/assets/images/background.svg" id="1_wkn2w"]
 [ext_resource type="Texture2D" uid="uid://dmjxji0tw46ip" path="res://GO--GO--GO--/assets/tilemaps/platformPack_tilesheet.png" id="3_18k5i"]
 [ext_resource type="Texture2D" uid="uid://bwylt4yr75v1j" path="res://GO--GO--GO--/assets/tilemaps/tilemap_packed.png" id="3_u5hgm"]
 [ext_resource type="Texture2D" uid="uid://b2hl2285i6hhy" path="res://GO--GO--GO--/assets/tilemaps/sheet.png" id="4_jbur8"]
@@ -19,9 +20,6 @@
 [ext_resource type="Script" uid="uid://b76k02s8kmdby" path="res://GO--GO--GO--/scenes/scripts/pause.gd" id="17_wkn2w"]
 [ext_resource type="Script" uid="uid://bw6vfyer3iuty" path="res://GO--GO--GO--/scenes/scripts/sound_control.gd" id="18_574cx"]
 [ext_resource type="Script" uid="uid://doq7s7tgsgjhb" path="res://GO--GO--GO--/scenes/scripts/full_screen.gd" id="19_4r043"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ec8lu"]
-load_path = "res://.godot/imported/background.svg-5a6db7a2514c13f6cc9c110976d3ff91.ctex"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_epdwp"]
 texture = ExtResource("1_dmstv")
@@ -10767,13 +10765,13 @@ corner_radius_bottom_left = 4
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -17.0
-offset_right = 3780.0
-offset_bottom = 1083.0
+offset_left = -22.0
+offset_top = -8.0
+offset_right = 1152.0
+offset_bottom = 251.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.47102, 0.522308)
-texture = SubResource("CompressedTexture2D_ec8lu")
+texture = ExtResource("1_wkn2w")
 expand_mode = 1
 
 [node name="TileMap" type="TileMap" parent="SceneObjects"]
@@ -10788,8 +10786,8 @@ position = Vector2(398, 88)
 script = ExtResource("5_m1b5t")
 
 [node name="Sprite2D" type="Sprite2D" parent="SceneObjects/END"]
-position = Vector2(1.99998, 1.52588e-05)
-scale = Vector2(0.176, 0.176)
+position = Vector2(0.499984, -1.49999)
+scale = Vector2(0.17, 0.17)
 texture = ExtResource("7_du1w5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneObjects/END"]

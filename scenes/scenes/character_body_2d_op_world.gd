@@ -1,27 +1,33 @@
 extends CharacterBody2D
 
 const COYOTE_TIME = 0.10
-const MAX_JUMPS = 2 
 const SPEED = 230.0
 const JUMP_VELOCITY = -460.0
+@onready var game_manager: Node = %GameManager
 @onready var coyote_time: Timer = $"Coyote Time"
 @onready var coyote_time_activated: bool = false
 @onready var jump_sound: AudioStreamPlayer2D = $"Jump-sound"
 @onready var sprite2D = $Sprite2D
-var jumps_left = MAX_JUMPS
+
+var max_jumps = 1
+var jumps_left = 1
 var coyote_timer = 0.0
 
 func _physics_process(delta: float) -> void:
+	if game_manager.points >= 50:
+		max_jumps = 2
+	elif game_manager.points>= 5:
+		max_jumps = 1
+	elif game_manager.points<=4:
+		max_jumps = 0
+
 	# Add gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	else:
-		coyote_timer = COYOTE_TIME  # Reset coyote timer when grounded
-		jumps_left = MAX_JUMPS      # Reset jump count
+		coyote_timer = COYOTE_TIME  
+		jumps_left = max_jumps      
 
-	# Reduce coyote timer when in air
-	if not is_on_floor() and coyote_timer > 0.0:
-		coyote_timer -= delta
 
 	# Handle jump input
 	if Input.is_action_just_pressed("Jump"):
@@ -29,12 +35,10 @@ func _physics_process(delta: float) -> void:
 			velocity.y = JUMP_VELOCITY
 			jump_sound.play()
 
-	
-			# Only consume a jump if not on ground
 			if not is_on_floor():
 				jumps_left -= 1
 
-			coyote_timer = 0.0 # Stop coyote once jump used
+			coyote_timer = 0.0 
 
 	# Horizontal movement
 	var direction := Input.get_axis("left", "right")
@@ -47,7 +51,7 @@ func _physics_process(delta: float) -> void:
 
 	# Animations
 	if is_on_floor():
-		if abs(velocity.x) > 1:
+		if velocity.x > 1 or velocity.x < -1:
 			sprite2D.play("run")
 		else:
 			sprite2D.play("default")

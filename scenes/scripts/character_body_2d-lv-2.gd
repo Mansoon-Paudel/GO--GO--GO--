@@ -30,13 +30,13 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction * SPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, 18)
+		velocity.x = move_toward(velocity.x, 0, 10)
 
 	move_and_slide()
 
 	# Animations
 	if is_on_floor():
-		if abs(velocity.x) > 1:
+		if velocity.x > 1 or velocity.x < -1:
 			sprite2D.play("run")
 		else:
 			sprite2D.play("default")
