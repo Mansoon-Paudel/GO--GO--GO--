@@ -144,3 +144,7 @@ shape = SubResource("CapsuleShape2D_uighc")
 [node name="Jump-sound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_uighc")
 bus = &"SFX"
+
+[node name="coyote_time" type="Timer" parent="."]
+wait_time = 0.125
+one_shot = true

@@ -10764,17 +10764,17 @@ corner_radius_bottom_left = 4
 [node name="SceneObjects" type="Node" parent="."]
 
 [node name="Background" type="TextureRect" parent="SceneObjects"]
-anchors_preset = -1
-anchor_right = 1.027
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -34.0
-offset_top = -13.0
-offset_right = 3604.44
-offset_bottom = 1005.0
+offset_left = -17.0
+offset_right = 3780.0
+offset_bottom = 1083.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.47102, 0.522308)
 texture = SubResource("CompressedTexture2D_ec8lu")
+expand_mode = 1
 
 [node name="TileMap" type="TileMap" parent="SceneObjects"]
 texture_filter = 1

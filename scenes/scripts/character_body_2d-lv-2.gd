@@ -1,38 +1,46 @@
 extends CharacterBody2D
 
+const SPEED = 270.0
+const JUMP_VELOCITY = -460.0
+const COYOTE_TIME = 0.13
 
-const SPEED = 240.0
-const JUMP_VELOCITY = -400.0
 @onready var jump_sound: AudioStreamPlayer2D = $"Jump-sound"
-@onready var sprite2D= $Sprite2D
-func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if (velocity.x > 1 or velocity.x < -1):
-		sprite2D.play("run")
-	else:
-		sprite2D.play("default")
+@onready var sprite2D = $Sprite2D
 
-	
+var coyote_timer = 0.0
+
+func _physics_process(delta: float) -> void:
+	# Add gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-		sprite2D.play("jump")
+	else:
+		coyote_timer = COYOTE_TIME
 
+	
 
-	# Handle jump.
-	if Input.is_action_just_pressed("Jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-		jump_sound.play()
-		
+	# Handle jump input
+	if Input.is_action_just_pressed("Jump"):
+		if is_on_floor() or coyote_timer > 0.0:
+			velocity.y = JUMP_VELOCITY
+			jump_sound.play()
+			coyote_timer = 0.0
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+	# Horizontal movement
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
-		
 	else:
-		velocity.x = move_toward(velocity.x, 0, 9)
-		
+		velocity.x = move_toward(velocity.x, 0, 18)
+
 	move_and_slide()
-	var isleft=velocity.x<0
-	sprite2D.flip_h = isleft
+
+	# Animations
+	if is_on_floor():
+		if abs(velocity.x) > 1:
+			sprite2D.play("run")
+		else:
+			sprite2D.play("default")
+	else:
+		sprite2D.play("jump")
+
+	sprite2D.flip_h = velocity.x < 0
