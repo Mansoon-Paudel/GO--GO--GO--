@@ -8,25 +8,30 @@ const JUMP_VELOCITY = -460.0
 @onready var coyote_time_activated: bool = false
 @onready var jump_sound: AudioStreamPlayer2D = $"Jump-sound"
 @onready var sprite2D = $Sprite2D
+@onready var left_jump: CPUParticles2D = $"Left jump"
+@onready var right_jump: CPUParticles2D = $"Right jump"
 
-var max_jumps = 1
-var jumps_left = 1
-var coyote_timer = 0.0
+
+var max_jumps=1
+var jumps_left=1
+var coyote_timer=0.0
+var is_left=velocity.x<0
 
 func _physics_process(delta: float) -> void:
-	if game_manager.points >= 50:
+	if game_manager.points >= 30:
 		max_jumps = 2
 	elif game_manager.points>= 5:
 		max_jumps = 1
 	elif game_manager.points<=4:
 		max_jumps = 0
 
+
 	# Add gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	else:
 		coyote_timer = COYOTE_TIME  
-		jumps_left = max_jumps      
+		jumps_left = max_jumps  
 
 
 	# Handle jump input
@@ -34,6 +39,10 @@ func _physics_process(delta: float) -> void:
 		if is_on_floor() or coyote_timer > 0.0 or jumps_left > 0:
 			velocity.y = JUMP_VELOCITY
 			jump_sound.play()
+			if velocity.x>0:
+				right_jump.emitting=true
+			elif velocity.x<0:
+				left_jump.emitting=true
 
 			if not is_on_floor():
 				jumps_left -= 1

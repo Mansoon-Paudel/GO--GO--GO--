@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://bct0rovnxfect"]
+[gd_scene load_steps=22 format=3 uid="uid://bct0rovnxfect"]
 
 [ext_resource type="Texture2D" uid="uid://cy0obuwfk3cy4" path="res://GO--GO--GO--/assets/carracter/charrecter.png" id="1_f50pn"]
 [ext_resource type="Script" uid="uid://c8illij8kn6am" path="res://GO--GO--GO--/scenes/scripts/character_body_2d.gd" id="1_ij6vw"]
@@ -124,6 +124,15 @@ animations = [{
 radius = 8.0
 height = 26.0
 
+[sub_resource type="Curve" id="Curve_k6bxe"]
+_limits = [0.0315549, 1.0, 0.0, 1.0]
+_data = [Vector2(0.00128866, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.0315549), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_dao80"]
+offsets = PackedFloat32Array(0, 0.487535, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 1, 1, 0.416667, 0, 1)
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_ij6vw")
 
@@ -146,3 +155,45 @@ bus = &"SFX"
 [node name="coyote_time" type="Timer" parent="."]
 wait_time = 0.125
 one_shot = true
+
+[node name="Right jump" type="CPUParticles2D" parent="."]
+position = Vector2(-5, 11)
+emitting = false
+amount = 10
+lifetime = 0.5
+one_shot = true
+speed_scale = 1.47
+explosiveness = 0.78
+emission_shape = 1
+emission_sphere_radius = 14.84
+direction = Vector2(-10, 10)
+spread = 79.32
+gravity = Vector2(20, 40)
+initial_velocity_min = 37.11
+initial_velocity_max = 60.0
+scale_amount_min = 2.5
+scale_amount_max = 3.5
+scale_amount_curve = SubResource("Curve_k6bxe")
+color = Color(0.72, 0.70848, 0.4896, 1)
+color_ramp = SubResource("Gradient_dao80")
+
+[node name="Left jump" type="CPUParticles2D" parent="."]
+position = Vector2(14, 13)
+emitting = false
+amount = 10
+lifetime = 0.5
+one_shot = true
+speed_scale = 1.47
+explosiveness = 0.78
+emission_shape = 1
+emission_sphere_radius = 14.84
+direction = Vector2(10, 10)
+spread = 79.32
+gravity = Vector2(20, 40)
+initial_velocity_min = 37.11
+initial_velocity_max = 60.0
+scale_amount_min = 2.5
+scale_amount_max = 3.5
+scale_amount_curve = SubResource("Curve_k6bxe")
+color = Color(0.72, 0.70848, 0.4896, 1)
+color_ramp = SubResource("Gradient_dao80")
