@@ -34,7 +34,7 @@ func _physics_process(delta: float) -> void:
 		jumps_left = max_jumps  
 
 
-	# Handle jump input
+	
 	if Input.is_action_just_pressed("Jump"):
 		if is_on_floor() or coyote_timer > 0.0 or jumps_left > 0:
 			velocity.y = JUMP_VELOCITY
@@ -49,7 +49,7 @@ func _physics_process(delta: float) -> void:
 
 			coyote_timer = 0.0 
 
-	# Horizontal movement
+	
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * SPEED
@@ -58,7 +58,7 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
-	# Animations
+	
 	if is_on_floor():
 		if velocity.x > 1 or velocity.x < -1:
 			sprite2D.play("run")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://b3dsat40onq4p"]
+[gd_scene load_steps=63 format=3 uid="uid://b3dsat40onq4p"]
 
 [ext_resource type="Texture2D" uid="uid://l7lw3rx8bep1" path="res://GO--GO--GO--/assets/images/background.svg" id="1_dn6hi"]
 [ext_resource type="Texture2D" uid="uid://yi6082m8deqe" path="res://GO--GO--GO--/assets/tilemaps/vector_jumper.svg" id="1_ltvjl"]
@@ -22,6 +22,7 @@
 [ext_resource type="Script" uid="uid://bb17ahp06m5yh" path="res://GO--GO--GO--/scenes/scenes/dialogue.gd" id="19_1pul6"]
 [ext_resource type="Texture2D" uid="uid://cy0obuwfk3cy4" path="res://GO--GO--GO--/assets/carracter/charrecter.png" id="19_enxw5"]
 [ext_resource type="FontFile" uid="uid://bld6r6c8pw4pw" path="res://GO--GO--GO--/assets/Fonts/Tomorrow/Tomorrow-Medium.ttf" id="20_sw4qb"]
+[ext_resource type="FontFile" uid="uid://c5tmmim340ytf" path="res://GO--GO--GO--/assets/Fonts/Tomorrow/Tomorrow-Light.ttf" id="21_usvgf"]
 [ext_resource type="Script" uid="uid://517o2fv1dfei" path="res://GO--GO--GO--/scenes/scripts/spikes.gd" id="23_rph71"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1krx6"]
@@ -11329,15 +11330,6 @@ libraries = {
 }
 autoplay = "RESET"
 
-[node name="Platform3" parent="SceneObjects/moving_platforms" instance=ExtResource("17_gyjhn")]
-position = Vector2(2069, 777)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SceneObjects/moving_platforms/Platform3"]
-libraries = {
-&"": SubResource("AnimationLibrary_dn6hi")
-}
-autoplay = "RESET"
-
 [node name="Platform" parent="SceneObjects/moving_platforms" instance=ExtResource("17_gyjhn")]
 position = Vector2(2069, 777)
 
@@ -11512,10 +11504,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -122.0
-offset_top = -42.0
-offset_right = -24.0
-offset_bottom = -14.0
+offset_left = -120.0
+offset_top = -53.0
+offset_right = -22.0
+offset_bottom = -25.0
 grow_horizontal = 0
 grow_vertical = 0
 theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
@@ -11529,6 +11521,16 @@ theme_override_font_sizes/font_size = 16
 theme_override_styles/hover = SubResource("StyleBoxFlat_51h7m")
 theme_override_styles/normal = SubResource("StyleBoxFlat_kg4vs")
 text = "Continue >>"
+
+[node name="Label" type="Label" parent="UI/Dialogue/Dialogue-Box"]
+layout_mode = 0
+offset_left = 1060.0
+offset_top = 128.0
+offset_right = 1128.0
+offset_bottom = 140.0
+theme_override_fonts/font = ExtResource("21_usvgf")
+theme_override_font_sizes/font_size = 8
+text = "Enter to continue"
 
 [node name="Pause" type="Node" parent="UI"]
 script = ExtResource("11_1krx6")
